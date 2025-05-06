@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>MITLibraries/renovate-config"
+    "github>MITLibraries/renovate-config",
+    "group:rubyOnRails"
   ]
 }
