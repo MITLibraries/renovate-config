@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
-    "group:allNonMajor",
     "schedule:nonOfficeHours"
   ],
   "vulnerabilityAlerts": {
@@ -11,5 +10,18 @@
     ],
     "schedule": "at any time"
   },
-  "dependencyDashboard": true
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "groupName": "{{manager}} non-major dependencies",
+      "groupSlug": "{{manager}}-minor-patch",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    }
+  ]
 }
