@@ -16,7 +16,9 @@
       "groupName": "{{manager}} non-major dependencies",
       "groupSlug": "{{manager}}-minor-patch",
       "matchPackagePatterns": [
-        "*",
+        "*"
+      ],
+      "matchPackageNames": [
         "!ruby"
       ],
       "matchUpdateTypes": [
