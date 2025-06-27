@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>MITLibraries/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "aws"
+      ],
+      "allowedVersions": "<6"
+    },
+    {
+      "matchPackageNames": [
+        "terraform"
+      ],
+      "allowedVersions": "<=1.11.0"
+    }
+  ]
+}
