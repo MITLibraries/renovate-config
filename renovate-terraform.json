@@ -6,15 +6,15 @@
   "packageRules": [
     {
       "matchPackageNames": [
-        "aws"
+        "hashicorp/aws"
       ],
-      "allowedVersions": "<6"
+      "allowedVersions": "<6.0"
     },
     {
       "matchPackageNames": [
-        "terraform"
+        "hashicorp/terraform"
       ],
-      "allowedVersions": "<=1.11.0"
+      "allowedVersions": "<=1.12.0"
     }
   ]
 }
