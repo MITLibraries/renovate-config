@@ -3,6 +3,9 @@
   "extends": [
     "github>MITLibraries/renovate-config"
   ],
+  "baseBranches": [
+    "dev"
+  ],
   "packageRules": [
     {
       "matchPackageNames": [
