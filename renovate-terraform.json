@@ -18,6 +18,12 @@
         "hashicorp/terraform"
       ],
       "allowedVersions": "<=1.12.0"
+    },
+    {
+      "matchPackageNames": [
+        "/terraform-aws-modules/"
+      ],
+      "groupName": "terraform-aws-modules"
     }
   ]
 }
