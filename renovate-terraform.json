@@ -5,7 +5,10 @@
   ],
   "baseBranches": [
     "dev"
-  ],
+  ],,
+  "pre-commit": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "matchPackageNames": [
@@ -24,6 +27,12 @@
         "/terraform-aws-modules/"
       ],
       "groupName": "terraform-aws-modules"
+    },
+    {
+      "matchManagers": [
+        "pre-commit"
+      ],
+      "groupName": "pre-commit"
     }
   ]
 }
