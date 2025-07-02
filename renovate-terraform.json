@@ -5,7 +5,7 @@
   ],
   "baseBranches": [
     "dev"
-  ],,
+  ],
   "pre-commit": {
     "enabled": true
   },
