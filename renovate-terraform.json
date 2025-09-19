@@ -7,7 +7,10 @@
     "dev"
   ],
   "pre-commit": {
-    "enabled": true
+    "enabled": true,
+    "automerge": false,
+    "labels": ["dependencies", "pre-commit"],
+    "semanticCommits": "enabled"
   },
   "packageRules": [
     {
