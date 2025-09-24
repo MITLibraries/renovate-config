@@ -8,7 +8,7 @@
   ],
   "pre-commit": {
     "enabled": true,
-    "automerge": false,
+    "automerge": true,
     "labels": ["dependencies", "pre-commit"],
     "semanticCommits": "enabled"
   },
@@ -17,13 +17,13 @@
       "matchPackageNames": [
         "hashicorp/aws"
       ],
-      "allowedVersions": "<6.0"
+      "allowedVersions": "<6.0.0"
     },
     {
       "matchPackageNames": [
         "hashicorp/terraform"
       ],
-      "allowedVersions": "<=1.12.0"
+      "allowedVersions": "<2.0.0"
     },
     {
       "matchPackageNames": [
