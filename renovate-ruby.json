@@ -3,5 +3,8 @@
   "extends": [
     "github>MITLibraries/renovate-config",
     "group:rubyOnRails"
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": false
+  }
 }
