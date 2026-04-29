@@ -6,6 +6,9 @@
   "baseBranches": [
     "dev"
   ],
+  "github-actions": {
+    "pinDigests": false
+  },
   "pre-commit": {
     "enabled": true,
     "automerge": true,
@@ -17,7 +20,7 @@
       "matchPackageNames": [
         "hashicorp/aws"
       ],
-      "allowedVersions": "<6.0.0"
+      "allowedVersions": "<7.0.0"
     },
     {
       "matchPackageNames": [
