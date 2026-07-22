@@ -19,7 +19,9 @@
         "*"
       ],
       "matchPackageNames": [
-        "!ruby"
+        "!ruby",
+        "!python",
+        "!public.ecr.aws/lambda/python"
       ],
       "matchUpdateTypes": [
         "minor",
