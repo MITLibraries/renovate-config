@@ -1,10 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>MITLibraries/renovate-config"],
+  "extends": [
+    "local>MITLibraries/renovate-config"
+  ],
   "baseBranches": ["dev"],
   "pre-commit": {
     "enabled": true,
     "automerge": true,
+    "timezone": "America/New_York",
+    "schedule": ["* 0-5 2 * *"],
     "labels": ["dependencies", "pre-commit"],
     "semanticCommits": "enabled"
   },
@@ -15,9 +19,11 @@
       "pinDigests": false
     },
     {
-      "description": "Enable pre-commit updates",
+      "description": "Enable pre-commit updates once per month",
       "matchManagers": ["pre-commit"],
-      "groupName": "pre-commit"
+      "groupName": "pre-commit",
+      "timezone": "America/New_York",
+      "schedule": ["* 0-5 1 * *"]
     },
     {
       "description": "Restrict the AWS Provider to v6.x or lower",
