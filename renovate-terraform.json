@@ -4,41 +4,52 @@
     "local>MITLibraries/renovate-config"
   ],
   "baseBranches": ["dev"],
+  "lockFileMaintenance": {
+    "enabled": false
+  },
   "pre-commit": {
-    "enabled": true,
-    "automerge": true,
-    "timezone": "America/New_York",
-    "schedule": ["* 0-5 2 * *"],
-    "labels": ["dependencies", "pre-commit"],
-    "semanticCommits": "enabled"
+    "enabled": true
   },
   "packageRules": [
+    {
+      "description": "Run all Terraform dependency updates weekly (early Monday)",
+      "matchManagers": ["terraform"],
+      "timezone": "America/New_York",
+      "extends": ["schedule:earlyMondays"]
+    },
     {
       "description": "Disable digest pinning for GitHub Actions in shared workflows",
       "matchManagers": ["github-actions"],
       "pinDigests": false
     },
     {
-      "description": "Enable pre-commit updates once per month",
-      "matchManagers": ["pre-commit"],
-      "groupName": "pre-commit",
-      "timezone": "America/New_York",
-      "schedule": ["* 0-5 1 * *"]
-    },
-    {
       "description": "Restrict the AWS Provider to v6.x or lower",
+      "matchManagers": ["terraform"],
       "matchPackageNames": ["hashicorp/aws"],
       "allowedVersions": "<7.0.0"
     },
     {
       "description": "Restrict the Terraform Provider to v1.x or lower",
+      "matchManagers": ["terraform"],
       "matchPackageNames": ["hashicorp/terraform"],
+      "extends": ["schedule:monthly"],
       "allowedVersions": "<2.0.0"
     },
     {
       "description": "Group together checks for terraform-aws-modules",
+      "matchManagers": ["terraform"],
       "matchPackageNames": ["/terraform-aws-modules/"],
       "groupName": "terraform-aws-modules"
+    },
+    {
+      "description": "Enable pre-commit updates once per month with automerge",
+      "matchManagers": ["pre-commit"],
+      "groupName": "pre-commit",
+      "timezone": "America/New_York",
+      "extends": ["schedule:monthly"],
+      "automerge": true,
+      "labels": ["dependencies", "pre-commit"],
+      "semanticCommits": "enabled"
     }
   ]
 }
