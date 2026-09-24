@@ -1,0 +1,24 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "assigneesFromCodeOwners": true,
+    "extends": [
+        "github>MITLibraries/renovate-config"
+    ],
+    "enabledManagers": [
+        "pep621"
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": [
+            "at any time"
+        ]
+    },
+    "packageRules": [
+        {
+            "matchPackageNames": [
+                "python"
+            ],
+            "enabled": false
+        }
+    ]
+}
